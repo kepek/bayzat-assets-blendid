@@ -1,0 +1,22 @@
+{
+  "name": "bayzat-assets-new",
+  "version": "1.0.0",
+  "main": "echo \"Error: no main specified\" && exit 1",
+  "scripts": {
+    "build": "echo \"Error: no build script specified\" && exit 0",
+    "clean": "echo \"Error: no clean script specified\" && exit 0",
+    "create": "echo \"Error: no create script specified\" && exit 0",
+    "delete": "echo \"Error: no delete script specified\" && exit 0",
+    "install": "echo \"Error: no install script specified\" && exit 0",
+    "lint": "echo \"Error: no lint script specified\" && exit 0",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "bayzat",
+    "bayzat-asset"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "blendid": "github:kepek/blendid#v44.0.1"
+  }
+}

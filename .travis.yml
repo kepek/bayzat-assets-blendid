@@ -1,0 +1,27 @@
+language: node_js
+node_js:
+  - "6.3.0"
+  - "6.9.1"
+  - "7.2.0"
+script:
+  - node bin/assets install --all
+  - node bin/assets build --all
+before_deploy:
+  - cp -vf $TRAVIS_BUILD_DIR/composer.json $TRAVIS_BUILD_DIR/dist/composer.json
+  - tar -C $TRAVIS_BUILD_DIR/dist/ -cvJf bayzat-assets-$TRAVIS_TAG.tar.xz .
+deploy:
+  provider: releases
+  api_key: $GITHUB_API_KEY
+  file: bayzat-assets-$TRAVIS_TAG.tar.xz
+  skip_cleanup: true
+  on:
+    repo: kepek/bayzat-assets-blendid
+    tags: true
+notifications:
+  email: false
+  slack:
+    rooms:
+      - bayzat:N59s8ZTDqb9cnnvIXlSLUyZW#travis-ci
+    on_success: always
+    on_failure: always
+    on_start: never
